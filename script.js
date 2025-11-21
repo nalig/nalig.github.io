@@ -9,103 +9,102 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Advanced Carousel Logic
-  const carousels = document.querySelectorAll('.carousel');
+  // Click-based Carousel Logic
+  const wrappers = document.querySelectorAll('.carousel-wrapper');
 
-  carousels.forEach(carousel => {
-    // 1. Infinite Loop Setup
+  wrappers.forEach(wrapper => {
+    const carousel = wrapper.querySelector('.carousel');
+    const prevBtn = wrapper.querySelector('.prev');
+    const nextBtn = wrapper.querySelector('.next');
+
+    // 1. Setup Infinite Loop (Clones)
     const cards = Array.from(carousel.children);
-    const cardWidth = 300 + 32; // Width + Gap (approx)
+    const cardWidth = 300 + 32; // Width + Gap
+    const visibleWidth = wrapper.offsetWidth;
 
-    // Clone items for infinite effect (prepend and append)
-    cards.forEach(card => {
-      const clone = card.cloneNode(true);
+    // We need enough clones to fill the screen + buffer
+    const clonesNeeded = Math.max(cards.length, Math.ceil(visibleWidth / cardWidth) + 2);
+
+    // Clone for end
+    for (let i = 0; i < clonesNeeded; i++) {
+      const clone = cards[i % cards.length].cloneNode(true);
       clone.classList.add('clone');
       carousel.appendChild(clone);
-    });
-    cards.reverse().forEach(card => {
-      const clone = card.cloneNode(true);
+    }
+
+    // Clone for start
+    for (let i = 0; i < clonesNeeded; i++) {
+      const clone = cards[cards.length - 1 - (i % cards.length)].cloneNode(true);
       clone.classList.add('clone');
       carousel.insertBefore(clone, carousel.firstChild);
-    });
+    }
 
-    // Scroll to middle set initially
-    // We need to wait for layout to settle, but let's try setting it immediately
-    setTimeout(() => {
-      carousel.scrollLeft = cards.length * cardWidth;
-    }, 10);
+    const allCards = Array.from(carousel.children);
 
+    // Start in the middle (at the first real item)
+    let currentIndex = clonesNeeded;
 
-    // 2. Center Highlight Logic
-    const updateActiveCard = () => {
-      const carouselCenter = carousel.getBoundingClientRect().left + carousel.offsetWidth / 2;
-      let closestCard = null;
-      let minDistance = Infinity;
+    // Function to scroll to a specific index
+    const scrollToCard = (index, animate = true) => {
+      const scrollPos = (index * cardWidth) + (cardWidth / 2) - (wrapper.offsetWidth / 2);
 
-      const allCards = carousel.querySelectorAll('.card');
-      allCards.forEach(card => {
-        const cardCenter = card.getBoundingClientRect().left + card.offsetWidth / 2;
-        const distance = Math.abs(carouselCenter - cardCenter);
+      if (animate) {
+        carousel.style.scrollBehavior = 'smooth';
+      } else {
+        carousel.style.scrollBehavior = 'auto';
+      }
 
-        if (distance < minDistance) {
-          minDistance = distance;
-          closestCard = card;
+      carousel.scrollLeft = scrollPos;
+
+      // Update Active State
+      allCards.forEach((card, i) => {
+        if (i === index) {
+          card.classList.add('active');
+        } else {
+          card.classList.remove('active');
         }
       });
-
-      allCards.forEach(card => card.classList.remove('active'));
-      if (closestCard) {
-        closestCard.classList.add('active');
-      }
     };
 
-    // 3. Infinite Loop Scroll Handler
-    const handleScroll = () => {
-      updateActiveCard();
+    // Initial positioning (no animation)
+    setTimeout(() => {
+      scrollToCard(currentIndex, false);
+    }, 50);
 
-      const totalWidth = cards.length * cardWidth;
+    // Handle Resize
+    window.addEventListener('resize', () => {
+      scrollToCard(currentIndex, false);
+    });
 
-      if (carousel.scrollLeft <= 50) {
-        carousel.scrollLeft += totalWidth;
-      } else if (carousel.scrollLeft >= (carousel.scrollWidth - carousel.offsetWidth - 50)) {
-        carousel.scrollLeft -= totalWidth;
-      }
+    // Navigation Logic
+    let isAnimating = false;
+
+    const move = (direction) => {
+      if (isAnimating) return;
+      isAnimating = true;
+
+      currentIndex += direction;
+      scrollToCard(currentIndex, true);
+
+      // Check for loop condition after animation
+      setTimeout(() => {
+        // If we moved into the end clones
+        if (currentIndex >= clonesNeeded + cards.length) {
+          // Teleport to start
+          currentIndex = clonesNeeded;
+          scrollToCard(currentIndex, false);
+        }
+        // If we moved into the start clones
+        else if (currentIndex < clonesNeeded) {
+          // Teleport to end
+          currentIndex = clonesNeeded + cards.length - 1;
+          scrollToCard(currentIndex, false);
+        }
+        isAnimating = false;
+      }, 500); // Match CSS transition time roughly
     };
 
-    carousel.addEventListener('scroll', handleScroll);
-    window.addEventListener('resize', updateActiveCard);
-
-    // 4. Drag to Scroll Logic
-    let isDown = false;
-    let startX;
-    let scrollLeft;
-
-    carousel.addEventListener('mousedown', (e) => {
-      isDown = true;
-      carousel.classList.add('active');
-      startX = e.pageX - carousel.offsetLeft;
-      scrollLeft = carousel.scrollLeft;
-    });
-
-    carousel.addEventListener('mouseleave', () => {
-      isDown = false;
-      carousel.classList.remove('active');
-    });
-
-    carousel.addEventListener('mouseup', () => {
-      isDown = false;
-      carousel.classList.remove('active');
-    });
-
-    carousel.addEventListener('mousemove', (e) => {
-      if (!isDown) return;
-      e.preventDefault();
-      const x = e.pageX - carousel.offsetLeft;
-      const walk = (x - startX) * 2; // Scroll-fast
-      carousel.scrollLeft = scrollLeft - walk;
-    });
-
-    // Initial update
-    setTimeout(updateActiveCard, 100);
+    nextBtn.addEventListener('click', () => move(1));
+    prevBtn.addEventListener('click', () => move(-1));
   });
 });

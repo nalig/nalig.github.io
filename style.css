@@ -184,53 +184,86 @@ nav a:hover {
   text-align: center;
 }
 
+/* Carousel Styles */
 .carousel-wrapper {
   position: relative;
   width: 100%;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .carousel {
   display: flex;
   gap: 2rem;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  padding: 2rem 50%;
-  /* Padding to allow first/last items to be centered */
-  scroll-behavior: smooth;
-  -ms-overflow-style: none;
-  /* IE and Edge */
-  scrollbar-width: none;
-  /* Firefox */
-  cursor: grab;
-}
-
-.carousel.active {
-  cursor: grabbing;
+  overflow-x: hidden;
+  /* Disable manual scroll */
   scroll-snap-type: none;
+  /* Managed by JS */
+  padding: 2rem 0;
+  width: 100%;
+  justify-content: flex-start;
   scroll-behavior: auto;
+  /* JS handles animation */
 }
 
 .carousel::-webkit-scrollbar {
   display: none;
 }
 
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  color: var(--accent-sage);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+.nav-btn:hover {
+  background: var(--accent-sage);
+  color: var(--bg-primary);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.nav-btn.prev {
+  left: 1rem;
+}
+
+.nav-btn.next {
+  right: 1rem;
+}
+
 .card {
   flex: 0 0 300px;
-  scroll-snap-align: center;
   background: var(--bg-secondary);
   border: 1px solid var(--glass-border);
   border-radius: 16px;
   overflow: hidden;
-  transition: all 0.4s ease;
-  opacity: 0.5;
-  transform: scale(0.9);
+  transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  opacity: 0.4;
+  transform: scale(0.85);
+  filter: blur(4px);
+  /* Strong blur for non-active */
   user-select: none;
 }
 
 .card.active {
   opacity: 1;
   transform: scale(1.1);
+  filter: blur(0);
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
   border-color: var(--accent-sage);
   z-index: 10;
