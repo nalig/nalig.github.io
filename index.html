@@ -1,29 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Grovalyn</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
-  <header>
-    <h1>Grovalyn</h1>
+  <header class="glass-header">
+    <div class="container header-content">
+      <div class="logo">Grovalyn</div>
+    </div>
   </header>
 
   <main>
-    <section class="card">
-      <h2>Welcome</h2>
-      <p>Just testing out website hosting a b it yk :).</p>
-      <button onclick="hello()">hi</button>
+    <section id="hero" class="hero-section">
+      <div class="hero-bg"></div>
+      <div class="container hero-content">
+        <h1>Build. Explore. <span class="highlight">Grow.</span></h1>
+        <p class="tagline">Creating value through the blend of human design and AI :)</p>
+        <a href="#projects" class="btn primary-btn">Projects</a>
+      </div>
+    </section>
+
+    <section id="projects" class="section-padding">
+      <div class="container">
+        <h2 class="section-title">Selected Works</h2>
+
+        <!-- Apps Category -->
+        <div class="category-section">
+          <h3 class="category-title">Apps</h3>
+          <div class="carousel-wrapper">
+            <div class="carousel" id="carousel-apps">
+              <article class="card project-card">
+                <div class="card-content">
+                  <h3>test</h3>
+                  <p>test</p>
+                  <div class="tags"><span class="tag">test</span></div>
+                </div>
+              </article>
+              <article class="card project-card">
+                <div class="card-content">
+                  <h3>test</h3>
+                  <p>test</p>
+                  <div class="tags"><span class="tag">test</span></div>
+                </div>
+              </article>
+              <article class="card project-card">
+                <div class="card-content">
+                  <h3>test</h3>
+                  <p>test</p>
+                  <div class="tags"><span class="tag">test</span></div>
+                </div>
+              </article>
+              <article class="card project-card">
+                <div class="card-content">
+                  <h3>test</h3>
+                  <p>test</p>
+                  <div class="tags"><span class="tag">test</span></div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+
+        <!-- Extensions Category -->
+        <div class="category-section">
+          <h3 class="category-title">Extensions</h3>
+          <div class="carousel-wrapper">
+            <div class="carousel" id="carousel-extensions">
+              <article class="card project-card">
+                <div class="card-content">
+                  <h3>test</h3>
+                  <p>test</p>
+                  <div class="tags"><span class="tag">test</span></div>
+                </div>
+              </article>
+              <article class="card project-card">
+                <div class="card-content">
+                  <h3>test</h3>
+                  <p>test</p>
+                  <div class="tags"><span class="tag">test</span></div>
+                </div>
+              </article>
+              <article class="card project-card">
+                <div class="card-content">
+                  <h3>test</h3>
+                  <p>test</p>
+                  <div class="tags"><span class="tag">test</span></div>
+                </div>
+              </article>
+              <article class="card project-card">
+                <div class="card-content">
+                  <h3>test</h3>
+                  <p>test</p>
+                  <div class="tags"><span class="tag">test</span></div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+
+        <!-- Other Category -->
+        <div class="category-section">
+          <h3 class="category-title">Other</h3>
+          <div class="carousel-wrapper">
+            <div class="carousel" id="carousel-other">
+              <article class="card project-card">
+                <div class="card-content">
+                  <h3>test</h3>
+                  <p>test</p>
+                  <div class="tags"><span class="tag">test</span></div>
+                </div>
+              </article>
+              <article class="card project-card">
+                <div class="card-content">
+                  <h3>test</h3>
+                  <p>test</p>
+                  <div class="tags"><span class="tag">test</span></div>
+                </div>
+              </article>
+              <article class="card project-card">
+                <div class="card-content">
+                  <h3>test</h3>
+                  <p>test</p>
+                  <div class="tags"><span class="tag">test</span></div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="about" class="section-padding about-section">
+      <div class="container">
+        <h2 class="section-title">Built with love</h2>
+        <div class="about-content">
+          <p>Grovalyn is a solo indie studio trying to make the world a better place, one line of code at a time.
+            Bundling human design and the use of AI to create tools that are both useful and beautiful :)</p>
+        </div>
+      </div>
     </section>
   </main>
 
   <footer>
-    <p>© 2025 Grovalyn</p>
+    <div class="container footer-content">
+      <p>&copy; 2025 Grovalyn by nalig</p>
+      <div class="Personal Github">
+        <a href="https://github.com/nalig" target="_blank" rel="noopener noreferrer">
+          Personal GitHub
+        </a>
+      </div>
+    </div>
   </footer>
 
   <script src="script.js"></script>
 </body>
+
 </html>
