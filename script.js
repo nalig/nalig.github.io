@@ -107,4 +107,17 @@ document.addEventListener('DOMContentLoaded', () => {
     nextBtn.addEventListener('click', () => move(1));
     prevBtn.addEventListener('click', () => move(-1));
   });
+
+  // Make project cards clickable
+  // Prikklok card should navigate to /prikklok
+  const cards = document.querySelectorAll('.project-card');
+  cards.forEach(card => {
+    const title = card.querySelector('h3');
+    if (title && title.textContent.trim() === 'Prikklok') {
+      card.style.cursor = 'pointer';
+      card.addEventListener('click', () => {
+        window.location.href = 'prikklok';
+      });
+    }
+  });
 });

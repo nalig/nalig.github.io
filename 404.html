@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting...</title>
+    <script>
+        // GitHub Pages 404 handler for client-side routing
+        // Store the path for redirect and navigate to index.html
+        const path = window.location.pathname;
+
+        // Check if this is an invite link
+        if (path.includes('/prikklok/invite/')) {
+            // Extract everything after /prikklok/
+            const prikklokPath = path.substring(path.indexOf('/prikklok/') + '/prikklok/'.length);
+            // Redirect to the Prikklok invite handler
+            window.location.replace('/prikklok/invite/index.html' + window.location.search + window.location.hash);
+        } else {
+            // For other 404s, redirect to home
+            window.location.replace('/' + window.location.search + window.location.hash);
+        }
+    </script>
+</head>
+
+<body>
+    <p>Redirecting...</p>
+</body>
+
+</html>
