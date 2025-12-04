@@ -205,15 +205,11 @@
     </div>
 
     <script>
-        // Parse URL to get invite type and code
-        // Expected URL format: grovalyn.com/prikklok/invite/employer/{code} or /employee/{code}
-        const path = window.location.pathname;
-        const pathParts = path.split('/').filter(p => p);
-
-        // Find 'invite' in path and get type and code after it
-        const inviteIndex = pathParts.indexOf('invite');
-        const inviteType = inviteIndex >= 0 ? pathParts[inviteIndex + 1] : null;
-        const inviteCode = inviteIndex >= 0 ? pathParts[inviteIndex + 2] : null;
+        // Parse URL query parameters to get invite type and code
+        // Expected URL format: grovalyn.com/prikklok/invite.html?type=employer&code={code}
+        const urlParams = new URLSearchParams(window.location.search);
+        const inviteType = urlParams.get('type'); // 'employer' or 'employee'
+        const inviteCode = urlParams.get('code');
 
         // Update subtitle based on invite type
         if (inviteType === 'employer') {
