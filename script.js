@@ -52,6 +52,10 @@ document.addEventListener('DOMContentLoaded', () => {
         carousel.style.scrollBehavior = 'smooth';
       } else {
         carousel.style.scrollBehavior = 'auto';
+        // Disable transitions on all cards for instant update
+        allCards.forEach(card => {
+          card.style.transition = 'none';
+        });
       }
 
       carousel.scrollLeft = scrollPos;
@@ -64,6 +68,15 @@ document.addEventListener('DOMContentLoaded', () => {
           card.classList.remove('active');
         }
       });
+
+      if (!animate) {
+        // Force reflow
+        carousel.offsetHeight;
+        // Re-enable transitions
+        allCards.forEach(card => {
+          card.style.transition = '';
+        });
+      }
     };
 
     // Initial positioning (no animation)
@@ -110,6 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Make project cards clickable
   // Prikklok card should navigate to /prikklok
+  // GeminiCopy card should open Firefox addon page
   const cards = document.querySelectorAll('.project-card');
   cards.forEach(card => {
     const title = card.querySelector('h3');
@@ -117,6 +131,11 @@ document.addEventListener('DOMContentLoaded', () => {
       card.style.cursor = 'pointer';
       card.addEventListener('click', () => {
         window.location.href = 'prikklok';
+      });
+    } else if (title && title.textContent.trim() === 'GeminiCopy (LaTeX)') {
+      card.style.cursor = 'pointer';
+      card.addEventListener('click', () => {
+        window.open('https://addons.mozilla.org/en-US/firefox/addon/geminicopy/', '_blank');
       });
     }
   });

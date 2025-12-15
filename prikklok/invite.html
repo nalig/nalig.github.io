@@ -14,7 +14,7 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
             min-height: 100vh;
             display: flex;
             align-items: center;
@@ -33,8 +33,9 @@
         }
 
         .logo {
-            font-size: 48px;
-            margin-bottom: 20px;
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 20px;
         }
 
         h1 {
@@ -169,7 +170,7 @@
 
 <body>
     <div class="container">
-        <div class="logo">⏱️</div>
+        <img src="../piko_transparant.png" alt="Piko Logo" class="logo">
         <h1>Prikklok Uitnodiging</h1>
         <p class="subtitle" id="invite-subtitle">Je bent uitgenodigd om deel te nemen</p>
 
@@ -188,11 +189,9 @@
             </p>
             <div class="download-buttons">
                 <a href="#" class="download-btn ios" id="ios-button" style="display: none;">
-                    <span>📱</span>
                     Download voor iOS
                 </a>
                 <a href="#" class="download-btn android" id="android-button" style="display: none;">
-                    <span>🤖</span>
                     Download voor Android
                 </a>
             </div>
