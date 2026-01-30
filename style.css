@@ -58,6 +58,8 @@ ul {
   gap: 2rem;
 }
 
+
+
 /* Header */
 .glass-header {
   position: fixed;
@@ -184,94 +186,48 @@ nav a:hover {
   text-align: center;
 }
 
-/* Carousel Styles */
-.carousel-wrapper {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.carousel {
-  display: flex;
+/* Grid Layout */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
-  overflow-x: hidden;
-  /* Disable manual scroll */
-  scroll-snap-type: none;
-  /* Managed by JS */
+  justify-items: center;
   padding: 2rem 0;
-  width: 100%;
-  justify-content: flex-start;
-  scroll-behavior: auto;
-  /* JS handles animation */
 }
 
-.carousel::-webkit-scrollbar {
-  display: none;
-}
-
-.nav-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: var(--glass-bg);
-  border: 1px solid var(--glass-border);
-  color: var(--accent-sage);
-  width: 40px;
-  height: 40px;
+.profile-img {
   border-radius: 50%;
-  cursor: pointer;
-  z-index: 20;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.2rem;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(5px);
+  object-fit: cover;
+  border: 4px solid var(--accent-sage);
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
-.nav-btn:hover {
-  background: var(--accent-sage);
-  color: var(--bg-primary);
-  transform: translateY(-50%) scale(1.1);
-}
-
-.nav-btn.prev {
-  left: 1rem;
-}
-
-.nav-btn.next {
-  right: 1rem;
-}
-
+/* Card Updates for Grid */
 .card {
-  flex: 0 0 300px;
+  width: 100%;
+  max-width: 350px;
   background: var(--bg-secondary);
   border: 1px solid var(--glass-border);
   border-radius: 16px;
   overflow: hidden;
-  transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
-  opacity: 0.4;
-  transform: scale(0.85);
-  filter: blur(4px);
-  /* Strong blur for non-active */
-  user-select: none;
-}
-
-.card.active {
+  transition: all 0.3s ease;
   opacity: 1;
-  transform: scale(1.1);
+  /* Always visible in grid */
+  transform: scale(1);
+  /* No initial scale down */
   filter: blur(0);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
-  border-color: var(--accent-sage);
-  z-index: 10;
+  /* No blur */
 }
 
 .card:hover {
-  border-color: var(--accent-mint);
+  transform: translateY(-5px);
+  border-color: var(--accent-sage);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
+
+
+
 
 .card-content {
   padding: 2rem;
@@ -317,17 +273,107 @@ nav a:hover {
   border: 1px solid rgba(169, 197, 160, 0.2);
 }
 
+/* Story Section */
+.story-section {
+  background-color: var(--bg-primary);
+  text-align: left;
+  /* Reset alignment for flex */
+}
+
+.story-container {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  flex-wrap: wrap;
+}
+
+.story-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.story-text p {
+  font-size: 1.25rem;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+}
+
+.story-text h2 {
+  display: none;
+  /* Hide if accidentally kept, but we moved it out in HTML */
+}
+
+.story-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.story-image img {
+  max-width: 100%;
+  max-height: 400px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--glass-border);
+  object-fit: contain;
+}
+
+/* Animations */
+.hidden {
+  opacity: 0;
+  transform: translateY(30px);
+  filter: blur(5px);
+  transition: all 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.show {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+
 /* About Section */
 .about-section {
   background-color: var(--bg-secondary);
   text-align: center;
 }
 
+.about-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
 .about-content p {
-  max-width: 700px;
-  margin: 0 auto;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   color: var(--text-muted);
+  font-family: var(--font-display);
+}
+
+.about-content .github-link {
+  color: var(--accent-sage);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.about-content .github-link:hover {
+  color: var(--accent-mint);
+  text-decoration: underline;
+}
+
+.profile-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 2px solid var(--accent-sage);
+  transition: transform 0.3s ease;
+}
+
+.profile-img:hover {
+  transform: scale(1.1) rotate(5deg);
 }
 
 /* Footer */
