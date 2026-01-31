@@ -1,5 +1,4 @@
 :root {
-  /* Palette */
   --bg-primary: #1a2f23;
   --bg-secondary: #2d4a3e;
   --accent-sage: #a9c5a0;
@@ -9,7 +8,6 @@
   --glass-bg: rgba(45, 74, 62, 0.6);
   --glass-border: rgba(255, 255, 255, 0.1);
 
-  /* Typography */
   --font-main: 'Outfit', sans-serif;
   --font-display: 'Playfair Display', serif;
 }
@@ -42,7 +40,6 @@ ul {
   list-style: none;
 }
 
-/* Layout Utilities */
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -58,9 +55,6 @@ ul {
   gap: 2rem;
 }
 
-
-
-/* Header */
 .glass-header {
   position: fixed;
   top: 0;
@@ -103,7 +97,6 @@ nav a:hover {
   color: var(--accent-sage);
 }
 
-/* Hero Section */
 .hero-section {
   position: relative;
   height: 100vh;
@@ -166,7 +159,6 @@ nav a:hover {
   transform: translateY(-2px);
 }
 
-/* Projects Section */
 .section-title {
   font-family: var(--font-display);
   font-size: 2.5rem;
@@ -186,7 +178,6 @@ nav a:hover {
   text-align: center;
 }
 
-/* Grid Layout */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -203,7 +194,6 @@ nav a:hover {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
-/* Card Updates for Grid */
 .card {
   width: 100%;
   max-width: 350px;
@@ -213,11 +203,8 @@ nav a:hover {
   overflow: hidden;
   transition: all 0.3s ease;
   opacity: 1;
-  /* Always visible in grid */
   transform: scale(1);
-  /* No initial scale down */
   filter: blur(0);
-  /* No blur */
 }
 
 .card:hover {
@@ -225,9 +212,6 @@ nav a:hover {
   border-color: var(--accent-sage);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
-
-
-
 
 .card-content {
   padding: 2rem;
@@ -273,11 +257,9 @@ nav a:hover {
   border: 1px solid rgba(169, 197, 160, 0.2);
 }
 
-/* Story Section */
 .story-section {
   background-color: var(--bg-primary);
   text-align: left;
-  /* Reset alignment for flex */
 }
 
 .story-container {
@@ -293,7 +275,7 @@ nav a:hover {
 }
 
 .story-text p {
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   color: var(--text-muted);
   margin-bottom: 1.5rem;
   line-height: 1.8;
@@ -301,7 +283,6 @@ nav a:hover {
 
 .story-text h2 {
   display: none;
-  /* Hide if accidentally kept, but we moved it out in HTML */
 }
 
 .story-image {
@@ -317,9 +298,9 @@ nav a:hover {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   border: 1px solid var(--glass-border);
   object-fit: contain;
+  transform: translateY(-145px);
 }
 
-/* Animations */
 .hidden {
   opacity: 0;
   transform: translateY(30px);
@@ -333,8 +314,6 @@ nav a:hover {
   filter: blur(0);
 }
 
-
-/* About Section */
 .about-section {
   background-color: var(--bg-secondary);
   text-align: center;
@@ -376,7 +355,6 @@ nav a:hover {
   transform: scale(1.1) rotate(5deg);
 }
 
-/* Footer */
 footer {
   padding: 2rem 0;
   border-top: 1px solid var(--glass-border);
@@ -400,7 +378,6 @@ footer {
   color: var(--accent-sage);
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .hero-content h1 {
     font-size: 2.5rem;
@@ -416,4 +393,102 @@ footer {
     gap: 1rem;
     text-align: center;
   }
+}
+
+.scroll-down {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 50px;
+  border: 2px solid var(--text-muted);
+  border-radius: 50px;
+  cursor: pointer;
+  transition: opacity 0.5s ease;
+  opacity: 0;
+}
+
+.scroll-down.visible {
+  opacity: 1;
+}
+
+.scroll-down::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6px;
+  height: 6px;
+  background-color: var(--accent-sage);
+  border-radius: 100%;
+  animation: scroll 1.5s infinite;
+}
+
+@keyframes scroll {
+  0% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px);
+  }
+}
+
+.simplicity-block {
+  text-align: center;
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+}
+
+.simplicity-text {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 3rem;
+  color: var(--accent-sage);
+  margin-top: -3.5rem;
+}
+
+.simplicity-arrow {
+  width: 150px;
+  display: block;
+  margin-left: auto;
+  margin-right: 95px;
+  transform: translateY(-60px);
+}
+
+.user-count {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.journal-section {
+  background-color: var(--bg-secondary);
+  padding: 4rem 2rem;
+  margin-top: 15rem;
+  margin-bottom: 5rem;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+.journal-text {
+  text-align: center;
+}
+
+.journal-text p {
+  font-size: 2rem;
+  color: var(--text-main);
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.4;
 }
