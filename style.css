@@ -800,6 +800,10 @@ ul {
   grid-template-columns: repeat(3, 1fr);
 }
 
+.audience-grid-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
 .audience-card {
   background: var(--bg-off-white);
   border: 1px solid var(--border-light);
@@ -1225,6 +1229,7 @@ ul {
   .services-grid-6,
   .audience-grid,
   .audience-grid-3,
+  .audience-grid-4,
   .tools-grid,
   .tools-grid-3 {
     grid-template-columns: 1fr;
