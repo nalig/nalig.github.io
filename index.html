@@ -1,129 +1,359 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Grovalyn</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
-    rel="stylesheet">
+  <title>Grovalyn — AI Visibility voor Belgische bedrijven</title>
+  <meta name="description" content="Grovalyn maakt uw merk zichtbaar voor AI-zoekmachines. AEO & GEO strategie, Schema.org implementatie, en maandelijkse monitoring voor Belgische bedrijven." />
+  <meta property="og:title" content="Grovalyn — AI Visibility voor Belgische bedrijven" />
+  <meta property="og:description" content="Uw merk bestaat niet als AI het niet kent. Ontdek hoe Grovalyn uw digitale zichtbaarheid transformeert." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://grovalyn.com" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" />
+  <link rel="icon" href="icon96.png" type="image/png" />
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
 
-  <header class="glass-header">
-    <div class="container header-content">
-      <div class="logo">Grovalyn</div>
+  <!-- ============================================
+       HEADER
+       ============================================ -->
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+      <a href="#" class="logo">Grovalyn</a>
+
+      <nav>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#diensten">Diensten</a></li>
+          <li><a href="#aanpak">Aanpak</a></li>
+          <li><a href="#doelgroep">Doelgroep</a></li>
+          <li><a href="#verhaal">Het Verhaal</a></li>
+          <li><a href="#tools">Extra's</a></li>
+          <li><a href="#contact" class="nav-cta">Gratis Visibility Check →</a></li>
+        </ul>
+      </nav>
+
+      <button class="menu-toggle" id="menu-toggle" aria-label="Menu openen">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </header>
 
+  <!-- Mobile overlay -->
+  <div class="mobile-overlay" id="mobile-overlay"></div>
+
   <main>
-    <section id="hero" class="hero-section">
-      <div class="hero-bg"></div>
-      <div class="container hero-content">
-        <h1>Driven By Simplicity</h1>
-        <p class="tagline"></p>
-        <div id="scroll-icon" class="scroll-down"></div>
+
+    <!-- ============================================
+         HERO
+         ============================================ -->
+    <section class="hero" id="hero">
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-badge reveal">
+            AEO & GEO Strategie voor België
+          </div>
+          <h1 class="reveal reveal-delay-1">
+            <span class="hero-h1-small">Zichtbaar in het</span><br>
+            <em>AI-TIJDPERK</em>
+          </h1>
+          <p class="hero-sub reveal reveal-delay-2">
+            Wij zorgen ervoor dat AI <strong>u als antwoord ziet</strong>.
+          </p>
+          <div class="hero-actions reveal reveal-delay-3">
+            <a href="#contact" class="btn btn-primary">Gratis Visibility Check →</a>
+          </div>
+        </div>
       </div>
     </section>
 
-    <div class="connector-line hidden"></div>
 
-    <section id="story" class="section-padding story-section hidden">
+    <!-- ============================================
+         THE PROBLEM — STATISTICS BLOCK
+         ============================================ -->
+    <section class="stats-section section-padding" id="probleem">
       <div class="container">
-        <h2 class="section-title centered-title">The Story</h2>
-        <div class="story-container">
-          <div class="story-text">
-            <p>
-              Hi there! This is a bit of the <strong>story</strong> behind Grovalyn (currently a one-man team).
-              I've always been <strong>fascinated by computers</strong>, with a strong interest in
-              automating everyday stuff. Turning small annoyances into useful tools, and complex ideas into
-              simple tangible ones.
+        <div class="stats-grid">
+          <div class="stat-card reveal">
+            <div class="stat-number" data-target="200" data-suffix="%">0%</div>
+            <p class="stat-label">
+              <strong>Stijging in AI-gedreven zoekopdrachten</strong> sinds 2024. Uw klanten gebruiken steeds vaker AI om antwoorden te vinden.
             </p>
-
-            <p>
-              As of 2026, I am finishing my <strong>Bachelor’s degree in Computer Science</strong> and working toward a
-              subsequent <strong>Master’s degree in Engineering: Computer Science</strong>.
+          </div>
+          <div class="stat-card reveal reveal-delay-1">
+            <div class="stat-number" data-target="65" data-suffix="%">0%</div>
+            <p class="stat-label">
+              <strong>Van Google-zoekopdrachten eindigt zonder klik.</strong> AI geeft het antwoord direct — is dat antwoord van ú?
             </p>
-
-            <p>
-              I'm always interested in acquiring knowledge in new fields, but I always seem to keep on returning to one
-              core
-              principle:
+          </div>
+          <div class="stat-card reveal reveal-delay-2">
+            <div class="stat-number" data-target="0" data-suffix="%">0%</div>
+            <p class="stat-label">
+              <strong>Van uw content bereikt AI</strong> als het niet machine-readable is. Zonder structured data bent u onzichtbaar.
             </p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-            <div class="simplicity-block">
-              <img src="arrow.png" alt="arrow" class="simplicity-arrow" loading="lazy">
-              <span class="simplicity-text">simplicity.</span>
+    <!-- ============================================
+         SERVICES
+         ============================================ -->
+    <section class="services-section section-padding" id="diensten">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">Diensten</span>
+          <h2 class="section-title">Wat <em>doen wij?</em></h2>
+        </div>
+
+        <div class="services-grid services-grid-6">
+          <div class="service-card reveal">
+            <div class="service-icon">🔍</div>
+            <h3>AI Visibility Scan</h3>
+            <p>We brengen uw huidige vindbaarheid in AI in kaart en identificeren kansen.</p>
+            <span class="service-tag">Gratis Intake</span>
+          </div>
+
+          <div class="service-card reveal reveal-delay-1">
+            <div class="service-icon">📝</div>
+            <h3>Content Optimalisatie</h3>
+            <p>Bestaande content herstructureren zodat AI-modellen deze perfect begrijpen.</p>
+            <span class="service-tag">Eenmalig</span>
+          </div>
+
+          <div class="service-card reveal reveal-delay-2">
+            <div class="service-icon">🏗️</div>
+            <h3>Schema & llms.txt</h3>
+            <p>Technische implementatie van machine-readable datastructuren en AI-instructies.</p>
+            <span class="service-tag">Setup</span>
+          </div>
+
+          <div class="service-card reveal reveal-delay-3">
+            <div class="service-icon">🗺️</div>
+            <h3>AEO Strategie Sessie</h3>
+            <p>Een diepgaande sessie waarin we een roadmap voor uw sector uitstippelen.</p>
+            <span class="service-tag">Consultancy</span>
+          </div>
+
+          <div class="service-card reveal reveal-delay-4">
+            <div class="service-icon">📊</div>
+            <h3>Monthly Monitoring</h3>
+            <p>Maandelijkse rapportage over uw AI-vermeldingen en nieuwe LLM-ontwikkelingen.</p>
+            <span class="service-tag">Abonnement</span>
+          </div>
+
+          <div class="service-card reveal reveal-delay-5">
+            <div class="service-icon">🚀</div>
+            <h3>Full AEO Retainer</h3>
+            <p>Volledige ontzorging: strategie, doorlopende implementatie en continue optimalisatie.</p>
+            <span class="service-tag">Partnerschap</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         HOW IT WORKS
+         ============================================ -->
+    <section class="process-section section-padding" id="aanpak">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">Aanpak</span>
+          <h2 class="section-title">Drie stappen naar<br><em>AI-zichtbaarheid</em></h2>
+        </div>
+
+        <div class="process-flow">
+          <div class="process-step reveal">
+            <div class="step-number">1</div>
+            <div class="process-step-text">
+              <h3>Audit</h3>
+              <p>We brengen uw huidige AI-zichtbaarheid in kaart en identificeren de grootste kansen voor uw sector.</p>
             </div>
-
-
           </div>
-          <div class="story-image">
-            <img src="old.png" alt="Early prototype" loading="lazy">
+
+          <div class="process-step reveal reveal-delay-2">
+            <div class="step-number">2</div>
+            <div class="process-step-text">
+              <h3>Implementatie</h3>
+              <p>Schema.org, llms.txt, en content-optimalisatie — we maken uw merk machine-readable en AI-klaar.</p>
+            </div>
+          </div>
+
+          <div class="process-step reveal reveal-delay-4">
+            <div class="step-number">3</div>
+            <div class="process-step-text">
+              <h3>Monitor & Optimaliseer</h3>
+              <p>Doorlopende monitoring en bijsturing. We zorgen dat u zichtbaar blijft naarmate AI-systemen evolueren.</p>
+            </div>
           </div>
         </div>
       </div>
+    </section>
 
-      <div class="journal-section">
-        <div class="container">
-          <div class="journal-text">
+    <!-- ============================================
+         TARGET AUDIENCE
+         ============================================ -->
+    <section class="audience-section section-padding" id="doelgroep">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">Doelgroep</span>
+          <h2 class="section-title">Voor wie is dit cruciaal?<br><em>Iedereen online.</em></h2>
+        </div>
+
+        <div class="audience-grid audience-grid-3">
+          <div class="audience-card reveal">
+            <div class="audience-icon">🛒</div>
+            <h3>Webshops</h3>
+            <p>Uw producten verschijnen in AI-aanbevelingen (of die van de concurrent).</p>
+          </div>
+
+          <div class="audience-card reveal reveal-delay-1">
+            <div class="audience-icon">🏢</div>
+            <h3>B2B & Diensten</h3>
+            <p>Uw expertise wordt (niet) geciteerd door AI-assistenten van beslissers.</p>
+          </div>
+
+          <div class="audience-card reveal reveal-delay-2">
+            <div class="audience-icon">⛳</div>
+            <h3>De Lokale Golfclub</h3>
+            <p>Zelfs voor "Wat is een leuke activiteit in de buurt?" antwoordt AI direct.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         HET VERHAAL
+         ============================================ -->
+    <section class="story-section section-padding" id="verhaal">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">Het Verhaal</span>
+          <h2 class="section-title">Hoe het <em>begon</em></h2>
+        </div>
+        <div class="story-container">
+          <div class="story-text reveal">
             <p>
-              Grovalyn is not a brand, but rather a <em>journal of progression</em>.
+              Grovalyn begon als een persoonlijk project — gedreven door een <strong>fascinatie voor technologie</strong>
+              en de drang om complexe ideeën om te zetten in iets tastbaars.
             </p>
+            <p>
+              Wat startte als het bouwen van kleine tools en extensies, groeide uit tot een diepere vraag:
+              <strong>hoe zorgen we ervoor dat Belgische bedrijven niet achterblijven</strong> in een wereld
+              waar AI bepaalt wie gevonden wordt?
+            </p>
+            <p>
+              Die vraag werd de missie. Vandaag combineert Grovalyn technische expertise met
+              een scherp begrip van AI-zoekmachines — om bedrijven zichtbaar te maken waar het ertoe doet.
+            </p>
+            <div class="story-author">
+              <img src="1760277096713.jpg" alt="Gilan" class="story-avatar" width="48" height="48" />
+              <div class="story-author-info">
+                <span class="story-author-name">Gilan</span>
+                <span class="story-author-role">Oprichter Grovalyn</span>
+              </div>
+            </div>
+          </div>
+          <div class="story-image reveal reveal-delay-2">
+            <img src="old.png" alt="Vroeg prototype — waar het begon" loading="lazy">
           </div>
         </div>
       </div>
     </section>
 
-
-
-    <section id="projects" class="section-padding hidden">
+    <!-- ============================================
+         CONTACT CTA
+         ============================================ -->
+    <section class="cta-section section-padding" id="contact">
       <div class="container">
-        <h2 class="section-title">Selected Works</h2>
+        <div class="cta-inner reveal">
+          <h2>Vraag uw gratis AI&nbsp;Visibility Check aan</h2>
+          <p>
+            Ontdek hoe AI-systemen uw merk vandaag zien — en wat u morgen kunt doen.
+            Geen verplichtingen, wel inzicht.
+          </p>
+          <div class="cta-actions">
+            <a href="mailto:info@grovalyn.com?subject=Gratis%20AI%20Visibility%20Check&body=Hallo%20Grovalyn%2C%0A%0AIk%20wil%20graag%20een%20gratis%20AI%20Visibility%20Check%20aanvragen%20voor%20mijn%20website.%0A%0AWebsite%3A%20%0ABedrijf%3A%20%0A%0AMet%20vriendelijke%20groet" class="btn btn-primary">
+              Start uw Visibility Check →
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <div class="projects-grid">
-          <a href="https://addons.mozilla.org/en-US/firefox/addon/geminicopy/" target="_blank" class="project-link">
-            <article class="card project-card">
-              <div class="card-content">
-                <div class="card-icon" style="background: url('icon96.png') center/cover no-repeat;"></div>
-                <h3>GeminiCopy (LaTeX)</h3>
-                <p>One-click LaTeX copying for Gemini.</p>
-                <div class="tags"><span class="tag">Extension</span><span class="tag">Productivity</span></div>
-                <div class="user-count">10+ Users</div>
+    <!-- ============================================
+         AI-TOOLS
+         ============================================ -->
+    <section class="tools-section section-padding" id="tools">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">Extra</span>
+          <h2 class="section-title">Ook maken we enkele <em>AI-tools</em></h2>
+        </div>
+        <div class="tools-grid tools-grid-3">
+          <a href="tools.html" class="tool-card reveal">
+            <div class="tool-card-icon">
+              <span style="font-size: 2rem;">🧩</span>
+            </div>
+            <div class="tool-card-content">
+              <h3>Tools</h3>
+              <p>GeminiCopy Firefox Extensie. One-click LaTeX copying voor Google Gemini. Kopieer formules direct naar je editor.</p>
+              <div class="tool-meta">
+                <span class="tool-tag">Extensie</span>
               </div>
-            </article>
+            </div>
+            <span class="tool-arrow">→</span>
+          </a>
+
+          <a href="artikelen.html" class="tool-card reveal reveal-delay-1">
+            <div class="tool-card-icon">
+              <span style="font-size: 2rem;">✍️</span>
+            </div>
+            <div class="tool-card-content">
+              <h3>Artikelen</h3>
+              <p>Lees over de laatste ontwikkelingen in Generative Engine Optimization en hoe u AI-zichtbaarheid inzet voor groei.</p>
+              <div class="tool-meta">
+                <span class="tool-tag">Blog</span>
+              </div>
+            </div>
+            <span class="tool-arrow">→</span>
+          </a>
+
+          <a href="experimenten.html" class="tool-card reveal reveal-delay-2">
+            <div class="tool-card-icon">
+              <span style="font-size: 2rem;">🔬</span>
+            </div>
+            <div class="tool-card-content">
+              <h3>Experimenten</h3>
+              <p>Onze openbare A/B-testen, knowledge graph bevindingen en technische SEO proefprojecten.</p>
+              <div class="tool-meta">
+                <span class="tool-tag">R&D</span>
+              </div>
+            </div>
+            <span class="tool-arrow">→</span>
           </a>
         </div>
-
       </div>
     </section>
 
-    <div class="connector-line hidden"></div>
-
-    <section id="about" class="section-padding about-section hidden">
-      <div class="container">
-        <div class="about-content">
-          <p>By <a href="https://github.com/nalig" target="_blank" class="github-link">@nalig</a></p>
-          <a href="https://github.com/nalig" target="_blank">
-            <img src="1760277096713.jpg" alt="nalig" class="profile-img" width="100" height="100">
-          </a>
-        </div>
-      </div>
-    </section>
   </main>
 
-  <footer>
-    <div class="container footer-content">
-      <p>&copy; 2026 Grovalyn</p>
-      <div class="Personal Github">
-        <a href="https://github.com/nalig" target="_blank" rel="noopener noreferrer">
-          Personal GitHub
-        </a>
+  <!-- ============================================
+       FOOTER
+       ============================================ -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-copy">&copy; 2026 Grovalyn</p>
+      <div class="footer-links">
+        <a href="https://github.com/nalig" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="mailto:info@grovalyn.com">Contact</a>
       </div>
     </div>
   </footer>
