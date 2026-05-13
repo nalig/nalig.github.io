@@ -564,6 +564,8 @@ ul {
 .stat-card {
   text-align: center;
   padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .stat-number {
@@ -1135,6 +1137,11 @@ ul {
 
   .hero h1 {
     font-size: 2.2rem;
+  }
+
+  .hero-h1-small {
+    font-size: 1.4rem;
+    margin-bottom: -1rem;
   }
 
   .hero-sub {
