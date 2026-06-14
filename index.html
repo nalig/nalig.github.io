@@ -1,361 +1,82 @@
 <!DOCTYPE html>
 <html lang="nl">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Grovalyn — AI Visibility voor Belgische bedrijven</title>
-  <meta name="description" content="Grovalyn maakt uw merk zichtbaar voor AI-zoekmachines. AEO & GEO strategie, Schema.org implementatie, en maandelijkse monitoring voor Belgische bedrijven." />
-  <meta property="og:title" content="Grovalyn — AI Visibility voor Belgische bedrijven" />
-  <meta property="og:description" content="Uw merk bestaat niet als AI het niet kent. Ontdek hoe Grovalyn uw digitale zichtbaarheid transformeert." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://grovalyn.com" />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" />
-  <link rel="icon" href="icon96.png" type="image/png" />
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grovalyn — AI & Data Expertise</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="icon96.png">
 </head>
+<body class="theme-light">
 
-<body>
-
-  <!-- ============================================
-       HEADER
-       ============================================ -->
-  <header class="site-header" id="site-header">
-    <div class="container header-inner">
-      <a href="#" class="logo">Grovalyn</a>
-
-      <nav>
-        <ul class="nav-links" id="nav-links">
-          <li><a href="#diensten">Diensten</a></li>
-          <li><a href="#aanpak">Aanpak</a></li>
-          <li><a href="#doelgroep">Doelgroep</a></li>
-          <li><a href="#verhaal">Het Verhaal</a></li>
-          <li><a href="#tools">Extra's</a></li>
-          <li><a href="#contact" class="nav-cta">Gratis Visibility Check →</a></li>
-        </ul>
-      </nav>
-
-      <button class="menu-toggle" id="menu-toggle" aria-label="Menu openen">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+  <!-- Abstract Header -->
+  <header class="minimal-header">
+    <div class="logo-container">
+      <a href="#" class="logo" id="logo-reset">Grovalyn.</a>
+      <a href="verhaal.html" class="about-link">ons verhaal</a>
     </div>
   </header>
 
-  <!-- Mobile overlay -->
-  <div class="mobile-overlay" id="mobile-overlay"></div>
-
-  <main>
-
-    <!-- ============================================
-         HERO
-         ============================================ -->
-    <section class="hero" id="hero">
-      <div class="container">
-        <div class="hero-content">
-          <div class="hero-badge reveal">
-            AEO & GEO Strategie voor België
+  <main id="main-content">
+    <!-- De Split Hero (Keuze) -->
+    <section class="split-view active" id="split-view">
+      <div class="split-intro">
+        <h1>Wat kan AI doen voor jouw onderneming?</h1>
+      </div>
+      
+      <div class="split-container">
+        <!-- Keuze 1: Extern -->
+        <button class="split-btn split-left" data-target="funnel-extern">
+          <div class="split-btn-inner">
+            <span class="split-label">Extern</span>
+            <h2>Ik wil meer klanten.</h2>
+            <p>Zorg dat AI (zoals ChatGPT) jouw bedrijf aanbeveelt en niet je concurrent.</p>
+            <span class="split-arrow">Bekijk oplossingen →</span>
           </div>
-          <h1 class="reveal reveal-delay-1">
-            <span class="hero-h1-small">Zichtbaar in het</span><br>
-            <em>AI-TIJDPERK</em>
-          </h1>
-          <p class="hero-sub reveal reveal-delay-2">
-            Wij zorgen ervoor dat AI <strong>u als antwoord ziet</strong>.
-          </p>
-          <div class="hero-actions reveal reveal-delay-3">
-            <a href="#contact" class="btn btn-primary">Gratis Visibility Check →</a>
+        </button>
+        
+        <!-- Keuze 2: Intern -->
+        <button class="split-btn split-right" data-target="funnel-intern">
+          <div class="split-btn-inner">
+            <span class="split-label">Intern</span>
+            <h2>Ik wil efficiënter werken.</h2>
+            <p>Doorzoek eigen documenten en versnel processen met veilige, afgeschermde AI.</p>
+            <span class="split-arrow">Bekijk oplossingen →</span>
           </div>
+        </button>
+      </div>
+    </section>
+
+    <!-- Funnel: Extern -->
+    <section class="funnel-section hidden" id="funnel-extern">
+      <div class="funnel-content">
+        <h2>Wordt jouw bedrijf al aanbevolen door AI?</h2>
+        <p class="funnel-lead">Je potentiële klanten zoeken steeds vaker via ChatGPT in plaats van Google. Wij voeren een blinde-vlekken audit uit en zorgen dat je zichtbaar bent als de expert in jouw regio.</p>
+        
+        <div class="funnel-actions">
+          <a href="mailto:nalig@grovalyn.com?subject=Gratis%20AI%20Audit" class="btn btn-primary">Vraag de Gratis AI Audit aan</a>
+          <button class="btn-link back-to-split">← Terug naar keuzemenu</button>
         </div>
       </div>
     </section>
 
-
-    <!-- ============================================
-         THE PROBLEM — STATISTICS BLOCK
-         ============================================ -->
-    <section class="stats-section section-padding" id="probleem">
-      <div class="container">
-        <div class="stats-grid">
-          <div class="stat-card reveal">
-            <div class="stat-number" data-target="74" data-suffix="%">0%</div>
-            <p class="stat-label">
-              <strong>Kiest het eerste AI-aanbod</strong> zonder verder te zoeken.
-            </p>
-            <a href="https://www.growth-memo.com/p/how-consumers-navigate-high-stakes" target="_blank" rel="noopener noreferrer" style="font-size: 0.85rem; color: inherit; opacity: 0.7; text-decoration: underline; margin-top: auto; padding-top: 1rem; display: inline-block;">Bron: Growth Memo, april 2026</a>
-          </div>
-          <div class="stat-card reveal reveal-delay-1">
-            <div class="stat-number" data-target="48" data-suffix="%">0%</div>
-            <p class="stat-label">
-              <strong>Van alle zoekopdrachten toont een AI Overview.</strong> 1,5 miljard mensen zien deze maandelijks.
-            </p>
-            <a href="https://sqmagazine.co.uk/ai-overviews-statistics/" target="_blank" rel="noopener noreferrer" style="font-size: 0.85rem; color: inherit; opacity: 0.7; text-decoration: underline; margin-top: auto; padding-top: 1rem; display: inline-block;">Bron: BrightEdge, februari 2026</a>
-          </div>
-          <div class="stat-card reveal reveal-delay-2">
-            <div class="stat-number" data-target="87,6" data-suffix="%">0%</div>
-            <p class="stat-label">
-              <strong>Van alle websites is vrijwel onzichtbaar voor AI-zoekmachines.</strong>
-            </p>
-            <a href="https://www.frase.io/blog/faq-schema-ai-search-geo-aeo" target="_blank" rel="noopener noreferrer" style="font-size: 0.85rem; color: inherit; opacity: 0.7; text-decoration: underline; margin-top: auto; padding-top: 1rem; display: inline-block;">Bron: Schema.org / Frase.io, 2025</a>
-          </div>
+    <!-- Funnel: Intern -->
+    <section class="funnel-section hidden" id="funnel-intern">
+      <div class="funnel-content">
+        <h2>Jouw onderneming, versterkt door AI</h2>
+        <p class="funnel-lead">Wij brengen AI in jouw dagelijkse werking, veilig en op maat. Zodat jij en je team tijd vrijmaken voor wat er echt toe doet.</p>
+        
+        <div class="funnel-actions">
+          <a href="mailto:nalig@grovalyn.com?subject=Virtuele%20koffie" class="btn btn-primary">Plan een virtuele koffie</a>
+          <button class="btn-link back-to-split">← Terug naar keuzemenu</button>
         </div>
       </div>
     </section>
-
-    <!-- ============================================
-         SERVICES
-         ============================================ -->
-    <section class="services-section section-padding" id="diensten">
-      <div class="container">
-        <div class="section-header reveal">
-          <span class="section-label">Diensten</span>
-          <h2 class="section-title">Wat <em>doen wij?</em></h2>
-        </div>
-
-        <div class="services-grid services-grid-6">
-          <div class="service-card reveal">
-            <div class="service-icon">🔍</div>
-            <h3>Gratis Zichtbaarheidscheck</h3>
-            <p>Ontdek hoe zichtbaar uw bedrijf is wanneer klanten vragen stellen aan ChatGPT en andere AI-platformen.</p>
-            <span class="service-tag">Gratis Intake</span>
-          </div>
-
-          <div class="service-card reveal reveal-delay-1">
-            <div class="service-icon">📝</div>
-            <h3>Contentoptimalisatie</h3>
-            <p>Maak uw content duidelijker voor AI-systemen zodat uw expertise vaker correct wordt weergegeven.</p>
-            <span class="service-tag">Eenmalig</span>
-          </div>
-
-          <div class="service-card reveal reveal-delay-2">
-            <div class="service-icon">🏗️</div>
-            <h3>Technische Optimalisatie</h3>
-            <p>Zorg dat AI-platformen uw website beter kunnen begrijpen, verwerken en vermelden.</p>
-            <span class="service-tag">Setup</span>
-          </div>
-
-          <div class="service-card reveal reveal-delay-3">
-            <div class="service-icon">🗺️</div>
-            <h3>Strategische Sessie</h3>
-            <p>Krijg een duidelijke roadmap om uw online zichtbaarheid in AI-resultaten te versterken.</p>
-            <span class="service-tag">Consultancy</span>
-          </div>
-
-          <div class="service-card reveal reveal-delay-4">
-            <div class="service-icon">📊</div>
-            <h3>Monitoring & Rapportage</h3>
-            <p>Volg op hoe uw zichtbaarheid evolueert binnen AI-platformen en waar nieuwe kansen ontstaan.</p>
-            <span class="service-tag">Abonnement</span>
-          </div>
-
-          <div class="service-card reveal reveal-delay-5">
-            <div class="service-icon">🚀</div>
-            <h3>Doorlopende Optimalisatie</h3>
-            <p>Blijf structureel zichtbaar terwijl AI-zoekmachines en modellen blijven veranderen.</p>
-            <span class="service-tag">Partnerschap</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================
-         HOW IT WORKS
-         ============================================ -->
-    <section class="process-section section-padding" id="aanpak">
-      <div class="container">
-        <div class="section-header reveal">
-          <span class="section-label">Aanpak</span>
-          <h2 class="section-title">Drie stappen naar<br><em>AI-zichtbaarheid</em></h2>
-        </div>
-
-        <div class="process-flow">
-          <div class="process-step reveal">
-            <div class="step-number">1</div>
-            <div class="process-step-text">
-              <h3>Audit</h3>
-              <p>We bekijken hoe AI-systemen uw merk op dit moment zien en ontdekken waar uw grootste kansen liggen.</p>
-            </div>
-          </div>
-
-          <div class="process-step reveal reveal-delay-2">
-            <div class="step-number">2</div>
-            <div class="process-step-text">
-              <h3>Implementatie</h3>
-              <p>Wij helpen uw website leesbaar te maken voor AI, zodat u als eerste naar voren komt in hun antwoord.</p>
-            </div>
-          </div>
-
-          <div class="process-step reveal reveal-delay-4">
-            <div class="step-number">3</div>
-            <div class="process-step-text">
-              <h3>Monitor & Optimaliseer</h3>
-              <p>AI verandert razendsnel. Wij houden de ontwikkelingen voor u in de gaten en sturen bij waar nodig, zodat u altijd zichtbaar blijft.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================
-         TARGET AUDIENCE
-         ============================================ -->
-    <section class="audience-section section-padding" id="doelgroep">
-      <div class="container">
-        <div class="section-header reveal">
-          <span class="section-label">Doelgroep</span>
-          <h2 class="section-title">Voor welke sectoren is AI cruciaal?<br><em>Voor elk bedrijf.</em></h2>
-        </div>
-
-        <div class="audience-grid audience-grid-4">
-          <div class="audience-card reveal" style="text-align: center;">
-            <div class="audience-icon" style="font-size: 2.5rem; margin-bottom: 1rem;">🍽️</div>
-            <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Horeca & Lokaal</h3>
-            <p>"Waar gaan we vanavond eten?" Zorg dat uw zaak het eerste antwoord is.</p>
-          </div>
-
-          <div class="audience-card reveal reveal-delay-1" style="text-align: center;">
-            <div class="audience-icon" style="font-size: 2.5rem; margin-bottom: 1rem;">🛒</div>
-            <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Webshops</h3>
-            <p>"Welke loopschoenen zijn de beste?" Uw producten horen bovenaan die lijst.</p>
-          </div>
-
-          <div class="audience-card reveal reveal-delay-2" style="text-align: center;">
-            <div class="audience-icon" style="font-size: 2.5rem; margin-bottom: 1rem;">🏢</div>
-            <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">B2B & Diensten</h3>
-            <p>"Wie is de beste boekhouder hier?" Laat AI direct uw kantoor aanraden.</p>
-          </div>
-
-          <div class="audience-card reveal reveal-delay-3" style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: transparent; border: 1px dashed var(--border-light); cursor: default; box-shadow: none;">
-            <span style="font-size: 2.5rem; margin-bottom: 1rem; opacity: 0.5;"></span>
-            <h3 style="font-size: 1.5rem; color: var(--text-muted); margin-bottom: 0;">...</h3>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================
-         HET VERHAAL
-         ============================================ -->
-    <section class="story-section section-padding" id="verhaal">
-      <div class="container">
-        <div class="section-header reveal">
-          <span class="section-label">Het Verhaal</span>
-          <h2 class="section-title">Hoe het <em>begon</em></h2>
-        </div>
-        <div class="story-container">
-          <div class="story-text reveal">
-            <p>
-              Als Digihelper stond ik jarenlang klaar om <strong>mensen uit mijn dorp te helpen</strong> in de digitale wereld. Het doel was simpel: zorgen dat niemand achterblijft door technologie die razendsnel verandert.
-            </p>
-            <p>
-              Vandaag de dag zien we <strong>exact hetzelfde gebeuren bij bedrijven</strong>. Door AI verandert de manier waarop we zoeken compleet. Net zoals mensen vroeger verdwaalden op het internet, dreigen ondernemingen nu onzichtbaar te worden voor AI-zoekmachines.
-            </p>
-            <p>
-              Vanuit diezelfde motivatie is Grovalyn ontstaan. We zorgen dat uw bedrijf niet achterblijft. We vertalen uw merk naar de taal van AI, zodat u <strong>weer opduikt precies daar waar mensen vandaag de dag zoeken</strong>.
-            </p>
-            <div class="story-author">
-              <img src="1760277096713.jpg" alt="Gilan" class="story-avatar" width="48" height="48" />
-              <div class="story-author-info">
-                <span class="story-author-name">Gilan</span>
-                <span class="story-author-role">Oprichter Grovalyn</span>
-              </div>
-            </div>
-          </div>
-          <div class="story-image reveal reveal-delay-2">
-            <div style="position: relative; display: inline-block;">
-              <img src="Digihelper.png" alt="Digihelper" loading="lazy" style="border: 6px solid var(--bg-white);">
-              <img src="old.png" alt="Vroeg prototype — waar het begon" loading="lazy" style="position: absolute; bottom: -20px; right: -20px; width: 45%; transform: rotate(12deg); border: 6px solid var(--bg-white); z-index: 2;">
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================
-         CONTACT CTA
-         ============================================ -->
-    <section class="cta-section section-padding" id="contact">
-      <div class="container">
-        <div class="cta-inner reveal">
-          <h2>Vraag nu gratis uw AI&nbsp;Visibility Check aan</h2>
-          <p>
-            Ontdek hoe AI-systemen uw merk vandaag zien.
-          </p>
-          <div class="cta-actions">
-            <a href="mailto:nalig@grovalyn.com?subject=Gratis%20AI%20Visibility%20Check&body=Hallo%20Grovalyn%2C%0A%0AIk%20wil%20graag%20een%20gratis%20AI%20Visibility%20Check%20aanvragen%20voor%20mijn%20website.%0A%0AWebsite%3A%20%0ABedrijf%3A%20%0A%0AMet%20vriendelijke%20groet" class="btn btn-primary">
-              Start uw Visibility Check →
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================
-         AI-TOOLS
-         ============================================ -->
-    <section class="tools-section section-padding" id="tools">
-      <div class="container">
-        <div class="section-header reveal">
-          <span class="section-label">Extra</span>
-          <h2 class="section-title">Eigen <em>AI-tools</em> & Inzichten</h2>
-        </div>
-        <div class="tools-grid tools-grid-3">
-          <a href="tools.html" class="tool-card reveal">
-            <div class="tool-card-icon">
-              <span style="font-size: 2rem;">🧩</span>
-            </div>
-            <div class="tool-card-content">
-              <h3>Tools</h3>
-              <p>Wist je dat Grovalyn ook enkele AI-tools heeft uitgebracht?</p>
-            </div>
-            <span class="tool-arrow">→</span>
-          </a>
-
-          <a href="artikelen.html" class="tool-card reveal reveal-delay-1">
-            <div class="tool-card-icon">
-              <span style="font-size: 2rem;">✍️</span>
-            </div>
-            <div class="tool-card-content">
-              <h3>Artikelen</h3>
-              <p>Bekijk hier onze recent gepubliceerde artikelen omtrent AI.</p>
-            </div>
-            <span class="tool-arrow">→</span>
-          </a>
-
-          <a href="experimenten.html" class="tool-card reveal reveal-delay-2">
-            <div class="tool-card-icon">
-              <span style="font-size: 2rem;">🔬</span>
-            </div>
-            <div class="tool-card-content">
-              <h3>Experimenten</h3>
-              <p>Geïnteresseerd in lopend onderzoek van ons? Bekijk het hier.</p>
-            </div>
-            <span class="tool-arrow">→</span>
-          </a>
-        </div>
-      </div>
-    </section>
-
   </main>
-
-  <!-- ============================================
-       FOOTER
-       ============================================ -->
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <p class="footer-copy">&copy; 2026 Grovalyn</p>
-      <div class="footer-links">
-        <a href="https://github.com/nalig" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <a href="mailto:nalig@grovalyn.com">Contact</a>
-      </div>
-    </div>
-  </footer>
 
   <script src="script.js"></script>
 </body>
-
 </html>
