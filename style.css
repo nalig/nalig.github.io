@@ -549,3 +549,34 @@
       width: 60%;
     }
   }
+
+/* Technical Details (Invisible/Subtle SEO block) */
+.technical-details {
+  margin-top: 3rem;
+  font-size: 0.75rem;
+  color: var(--clr-noir);
+  opacity: 0.3;
+  transition: opacity 0.3s ease;
+  text-align: left;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.technical-details:hover {
+  opacity: 0.8;
+}
+
+.technical-details summary {
+  cursor: pointer;
+  list-style: none; /* Hide default arrow in some browsers */
+}
+
+.technical-details summary::-webkit-details-marker {
+  display: none;
+}
+
+.technical-details p {
+  margin-top: 1rem;
+  line-height: 1.6;
+}

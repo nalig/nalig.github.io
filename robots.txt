@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://nalig.github.io/sitemap.xml
